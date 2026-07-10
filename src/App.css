@@ -28,6 +28,7 @@
   z-index: 2;
   text-align: center;
   transform: translate(-180px, -40px);
+  opacity: 1;
 }
 
 .hero h1{

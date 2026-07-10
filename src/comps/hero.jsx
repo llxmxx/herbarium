@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react'
-import { heroAnimation } from '../animations/heroAnimation'
-import flower from "../assets/flower.jfif"
+import { useEffect, useRef } from 'react';
+import { heroAnimation } from '../animations/heroAnimation';
+import flower from "../assets/flower.jfif";
 
 function Hero(){
     const heroRef = useRef(null);

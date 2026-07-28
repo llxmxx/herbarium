@@ -11,42 +11,42 @@ export const collections = [
         title: "spring",
         image: spring,
         featured: true,
-        x:40,
-        y:30
+        x:45,
+        y:25
     },
     {
         id: 2,
         title: 'summer',
         image: summer,
         x: 75,
-        y: 20
+        y: 15
     },
     {
         id: 3,
         title: 'autumn',
         image: autumn,
         x: 75,
-        y: 65
+        y: 55
     },
     {
         id: 4,
         title: 'winter',
         image: winter,
-        x: 25,
-        y: 20
+        x: 15,
+        y: 15
     },
     {
         id: 5,
         title: 'rare',
         image: rare,
-        x: 25,
-        y: 65
+        x: 15,
+        y: 55
     },
     {
         id: 6,
         title: 'wild',
         image: wild,
-        x: 50,
-        y: 85
+        x: 45,
+        y: 60
     }
 ]

@@ -1,3 +1,7 @@
+html::-webkit-scrollbar, body::-webkit-scrollbar{
+  display: none;
+}
+
 .hero {
   height: 100vh;
   position: relative;
@@ -105,6 +109,7 @@ footer {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  justify-items: center;
   background: #0b1108;
 }
 
@@ -123,8 +128,10 @@ footer {
 }
 
 .collections-board{
+  scale: 3;
   position: absolute;
   inset: 0;
+  transform: translateY(8%);
 }
 
 .collection-card{
@@ -147,9 +154,9 @@ footer {
   font-weight: 500;
   color: #eee7d5;
   letter-spacing: 5px;
+  justify-items: center;
 }
 
 .featured{
-  width: 20vw;
   z-index: 10;
 }

@@ -104,40 +104,34 @@ footer {
 .collections{
   height: 100vh;
   position: relative;
+  padding: 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 80px;
   background: #0b1108;
+}
 
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 80px;
-    font-weight: 300;
-    letter-spacing: 8px;
-  }
+.collections h2{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px;
+  font-weight: 300;
+  letter-spacing: 8px;
+}
 
-  p {
-    margin-top: 20px;
-    color: #aaa;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 2px;
-  }
+.collections p{
+  margin-top: 20px;
+  color: #aaa;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 2px;
 }
 
 .collections-board{
-  width: 2200px;
-  height: 1500px;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  left:50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
 }
 
 .collection-card{
-  width: 240px;
+  width: 10vw;
   position: absolute;
 }
 
@@ -146,19 +140,25 @@ footer {
   aspect-ratio: 4/5;
   object-fit: cover;
   display: block;
-  border-radius: 20px;
+  border-radius: 1vw;
 }
 
 .card-overlay{
-  margin-top: 16px;
+  margin-top: 1vw;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-size: 1vw;
   font-weight: 500;
   color: #eee7d5;
   letter-spacing: 5px;
 }
 
 .featured{
-  width: 520px;
+  width: 20vw;
   z-index: 10;
+}
+
+.collections-pin{
+  height:100vh;
+  width:100vw;
+  position: relative;
 }

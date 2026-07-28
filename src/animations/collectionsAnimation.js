@@ -3,14 +3,17 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function collectionsAnimation(col, board, pin){
+export function collectionsAnimation(col, board){
+    console.log(ScrollTrigger.getAll());
     gsap.to(board.current, {
-        scale: 2,
+        scale: 0.4,
         scrollTrigger: {
             trigger: col.current,
             start: "top top",
+            end: "+=100%",
             scrub: true,
-        },
-        duration: 1
+            pin: col.current,
+            anticipatePin: 1
+        }
     });
 }

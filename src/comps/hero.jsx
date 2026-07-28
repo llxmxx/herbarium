@@ -1,11 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { heroAnimation } from '../animations/heroAnimation';
 import flower from "../assets/spring.jfif";
+import { useGSAP } from '@gsap/react';
 
 function Hero(){
     const heroRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         heroAnimation(heroRef.current);
     }, []);
 

@@ -5,9 +5,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function collectionsAnimation(col, board){
     console.log(ScrollTrigger.getAll());
-    gsap.to(board.current, {
+    gsap.fromTo(board.current, {
+        scale: 3,
+        yPercent: 8
+        },
+        {
         scale: 1,
-        y: 0,
+        yPercent: 0,
         scrollTrigger: {
             trigger: col.current,
             start: "top top",

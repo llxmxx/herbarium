@@ -128,10 +128,9 @@ footer {
 }
 
 .collections-board{
-  scale: 3;
   position: absolute;
   inset: 0;
-  transform: translateY(8%);
+  transform: translateY(8%) scale(3);
 }
 
 .collection-card{

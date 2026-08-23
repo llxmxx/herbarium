@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import './App.css';
 import Navbar from './comps/navbar';
 import Hero from './comps/hero';
@@ -6,14 +8,22 @@ import Archive from './comps/archive';
 import Journal from './comps/journal';
 import Contact from './comps/contact';
 import Footer from './comps/footer';
+import { heroAnimation } from "./animations/heroAnimation";
 
 function App(){
+  const heroImgRef = useRef(null);
+  const featuredImgRef = useRef(null);
+
+  useGSAP(() => {
+    heroAnimation(heroImgRef, featuredImgRef);
+  }, []);
+  
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Collections />
+        <Hero heroImgRef={heroImgRef} featuredImgRef={featuredImgRef} />
+        <Collections featuredImgRef={featuredImgRef}/>
         <Archive />
         <Journal />
         <Contact />

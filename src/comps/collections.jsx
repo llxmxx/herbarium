@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { collectionsAnimation } from "../animations/collectionsAnimation";
 import { useGSAP } from '@gsap/react';
 
-function Collections() {
+function Collections({featuredImgRef}) {
     const colRef = useRef(null);
     const boardRef = useRef(null);
 
@@ -18,7 +18,7 @@ function Collections() {
             <p>explore our curated botanical selections</p>
             <div className="collections-board" ref={boardRef}>
                 {collections.map((collection) => (
-                    <CollectionCard key={collection.id} collection={collection} />
+                    <CollectionCard key={collection.id} collection={collection} imgRef={collection.featured ? featuredImgRef : null} />
                 ))}
             </div>
         </section>

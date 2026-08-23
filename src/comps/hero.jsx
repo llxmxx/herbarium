@@ -1,18 +1,13 @@
 import { useRef } from 'react';
 import { heroAnimation } from '../animations/heroAnimation';
 import flower from "../assets/spring.jfif";
-import { useGSAP } from '@gsap/react';
 
-function Hero(){
+function Hero({heroImgRef, featuredImgRef}){
     const heroRef = useRef(null);
-
-    useGSAP(() => {
-        heroAnimation(heroRef.current);
-    }, []);
 
     return(
         <section className="hero">
-            <img src={flower} alt="flower" className="hero-image"/>
+            <img ref={heroImgRef} src={flower} alt="flower" className="hero-image"/>
             <div className="overlay"></div>
             <div ref={heroRef} className="hero-content">
                 <h1>

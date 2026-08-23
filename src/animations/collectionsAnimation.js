@@ -4,10 +4,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function collectionsAnimation(col, board){
-    console.log(ScrollTrigger.getAll());
     gsap.fromTo(board.current, {
-        scale: 3,
-        yPercent: 8
+        scale: 2.75,
+        yPercent: 55
         },
         {
         scale: 1,

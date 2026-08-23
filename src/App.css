@@ -130,11 +130,14 @@ footer {
 .collections-board{
   position: absolute;
   inset: 0;
-  transform: translateY(8%) scale(3);
 }
 
 .collection-card{
   width: 10vw;
+  position: absolute;
+}
+
+.collection-card.featured{
   position: absolute;
 }
 

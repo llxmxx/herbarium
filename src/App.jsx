@@ -15,7 +15,7 @@ function App(){
   const featuredImgRef = useRef(null);
 
   useGSAP(() => {
-    heroAnimation(heroImgRef, featuredImgRef);
+    heroAnimation(heroImgRef);
   }, []);
   
   return (

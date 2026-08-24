@@ -1,19 +1,16 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Flip } from "gsap/Flip";
 
-gsap.registerPlugin(ScrollTrigger, Flip);
+gsap.registerPlugin(ScrollTrigger);
 
-export function heroAnimation(heroImg, featuredImg) {
-    const tl = gsap.timeline();
+export function heroAnimation(heroImg) {
     const heroImage = heroImg.current;
-    const featuredImage = featuredImg.current;
+    if (!heroImage) return;
 
-    gsap.set(featuredImage, {
-        opacity: 0
-    });
-
-    /*tl.fromTo(
+    /*
+    const tl = gsap.timeline();
+    if(!element) return;
+    tl.fromTo(
         element.querySelector("h1"),
         {
             opacity: 0,
@@ -39,38 +36,33 @@ export function heroAnimation(heroImg, featuredImg) {
             ease: "power3.out"
         },
         "=-0.5"
-*/
-    const state = Flip.getState(heroImage);
+    );
+     */
 
-    featuredImage.parentNode.appendChild(heroImage);
+    gsap.set(".collections", { opacity: 0 });
 
-    gsap.set(heroImage, {
-        position: "absolute",
-        inset: 0,
-        width: "100%",
-        height: "100%",
-        objectFit: "cover"
-    });
-
-    Flip.from(state, {
-        paused: true
-    });
-
-    const flip = Flip.from(state, {
-        paused: true,
-        absolute: true,
-        scale: true,
-        ease: "none"
-    });
-
-    ScrollTrigger.create({
-        trigger: ".collections",
-        start: "top bottom",
-        end: "top top",
-        scrub: true,
-
-        onUpdate: (self) => {
-            flip.progress(self.progress);
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1
         }
-    });
+    })
+    .to(heroImage, {
+        width: "10%",
+        height: "300px",
+        left: "50%",
+        scale: 2.75,
+        xPercent: -50,
+        yPercent: 5,
+        borderRadius: "5%",
+        ease: "none"
+    })
+    .to(".collections", {
+        opacity: 1,
+        ease: "none"
+    }, "-=0.2");
 }

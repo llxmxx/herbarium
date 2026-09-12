@@ -17,7 +17,8 @@ export function collectionsAnimation(col, board){
             end: "+=100%",
             scrub: true,
             pin: col.current,
-            anticipatePin: 1
+            anticipatePin: 1,
+            refreshPriority: 1
         }
     });
 }

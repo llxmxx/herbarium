@@ -3,12 +3,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function heroAnimation(heroImg){
+export function heroAnimation(hero, heroImg){
+    const heroElement = hero.current;
     const heroImage = heroImg.current;
     if (!heroImage) return;
 
     const heroContent = document.querySelector(".hero-content");
     const collectionsHeading = document.querySelector(".collections h2");
+    const collections = document.querySelector("collections");
 
     const tl = gsap.timeline();
     tl.fromTo(
@@ -46,12 +48,14 @@ export function heroAnimation(heroImg){
 
     gsap.timeline({
         scrollTrigger: {
-            trigger: ".hero",
+            trigger: heroElement,
             start: "top top",
-            end: "+=100%",
+            end: "+=110%",
             scrub: true,
-            pin: true,
+            pin: heroElement,
             anticipatePin: 1,
+            refreshPriority: 2,
+            markers: true,
             onLeave: () => {
                 gsap.to(collectionsHeading,
                     {

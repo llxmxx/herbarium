@@ -2,14 +2,12 @@ import { useRef } from 'react';
 import { heroAnimation } from '../animations/heroAnimation';
 import flower from "../assets/spring.jfif";
 
-function Hero({heroImgRef, featuredImgRef}){
-    const heroRef = useRef(null);
-
+function Hero({heroImgRef, heroRef}){
     return(
-        <section className="hero">
+        <section ref={heroRef} className="hero">
             <img ref={heroImgRef} src={flower} alt="flower" className="hero-image"/>
             <div className="overlay"></div>
-            <div ref={heroRef} className="hero-content">
+            <div className="hero-content">
                 <h1>
                     HERBARIUM
                 </h1>

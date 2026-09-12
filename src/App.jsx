@@ -22,7 +22,7 @@ function App(){
     <>
       <Navbar />
       <main>
-        <Hero heroImgRef={heroImgRef} featuredImgRef={featuredImgRef} />
+        <Hero heroImgRef={heroImgRef}/>
         <Collections featuredImgRef={featuredImgRef}/>
         <Archive />
         <Journal />

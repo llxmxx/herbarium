@@ -3,18 +3,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function heroAnimation(heroImg) {
+export function heroAnimation(heroImg){
     const heroImage = heroImg.current;
     if (!heroImage) return;
 
-    /*
+    const heroContent = document.querySelector(".hero-content");
+
     const tl = gsap.timeline();
-    if(!element) return;
     tl.fromTo(
-        element.querySelector("h1"),
+        heroContent.querySelector("h1"),
         {
             opacity: 0,
-            y: 80,
+            y: 80
         },
         {
             opacity: 1,
@@ -24,7 +24,7 @@ export function heroAnimation(heroImg) {
         }
     )
     .fromTo(
-        element.querySelector("p"),
+        heroContent.querySelector("p"),
         {
             opacity: 0,
             y: 30
@@ -35,11 +35,8 @@ export function heroAnimation(heroImg) {
             duration: 1.5,
             ease: "power3.out"
         },
-        "=-0.5"
+        "-=0.5"
     );
-     */
-
-    gsap.set(".collections", { opacity: 0 });
 
     gsap.timeline({
         scrollTrigger: {
@@ -61,8 +58,9 @@ export function heroAnimation(heroImg) {
         borderRadius: "5%",
         ease: "none"
     })
-    .to(".collections", {
-        opacity: 1,
+    .to(heroContent, {
+        opacity: 0,
+        y: "-40%",
         ease: "none"
-    }, "-=0.2");
+    }, 0);
 }

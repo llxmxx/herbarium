@@ -8,6 +8,7 @@ export function heroAnimation(heroImg){
     if (!heroImage) return;
 
     const heroContent = document.querySelector(".hero-content");
+    const collectionsHeading = document.querySelector(".collections h2");
 
     const tl = gsap.timeline();
     tl.fromTo(
@@ -38,6 +39,11 @@ export function heroAnimation(heroImg){
         "-=0.5"
     );
 
+    if (collectionsHeading) gsap.set(collectionsHeading,{
+        opacity: 0,
+        y: 30
+    });
+
     gsap.timeline({
         scrollTrigger: {
             trigger: ".hero",
@@ -45,7 +51,23 @@ export function heroAnimation(heroImg){
             end: "+=100%",
             scrub: true,
             pin: true,
-            anticipatePin: 1
+            anticipatePin: 1,
+            onLeave: () => {
+                gsap.to(collectionsHeading,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out"
+                    }
+                );
+            },
+            onEnterBack: () => {
+                gsap.to(collectionsHeading, {
+                    opacity: 0,
+                    y: 30
+                });
+            }
         }
     })
     .to(heroImage, {

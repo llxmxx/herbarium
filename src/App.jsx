@@ -24,8 +24,8 @@ function App(){
       <main>
         <Hero heroImgRef={heroImgRef}/>
         <Collections featuredImgRef={featuredImgRef}/>
-        <Archive />
-        <Journal />
+        {/* <Archive />
+        <Journal />*/}
         <Contact />
       </main>
       <Footer />

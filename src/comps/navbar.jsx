@@ -22,11 +22,11 @@ function Navbar(){
 
     return(
         <nav ref={navRef} className="navbar">
-            <h2 className="logo">HERBARIUM</h2>
+            <h2 className="logo">{/*HERBARIUM*/}</h2>
             <div className="links navbar-links">
                 <p>collections</p>
-                <p>archive</p>
-                <p>journal</p>
+                {/*<p>archive</p>
+                <p>journal</p>*/}
                 <p>contact</p>
             </div>
         </nav>

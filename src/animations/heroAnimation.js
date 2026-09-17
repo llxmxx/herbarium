@@ -3,14 +3,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function heroAnimation(hero, heroImg){
+export function heroAnimation(hero, heroImg, col, board){
     const heroElement = hero.current;
     const heroImage = heroImg.current;
+    const colElement = col.current;
+    const boardElement = board.current;
     if (!heroImage) return;
 
     const heroContent = document.querySelector(".hero-content");
     const collectionsHeading = document.querySelector(".collections h2");
-    const collections = document.querySelector("collections");
 
     const tl = gsap.timeline();
     tl.fromTo(
@@ -50,12 +51,12 @@ export function heroAnimation(hero, heroImg){
         scrollTrigger: {
             trigger: heroElement,
             start: "top top",
-            end: "+=110%",
+            end: "bottom top",
             scrub: true,
             pin: heroElement,
+            pinSpacing: false,
             anticipatePin: 1,
             refreshPriority: 2,
-            markers: true,
             onLeave: () => {
                 gsap.to(collectionsHeading,
                     {
@@ -89,4 +90,22 @@ export function heroAnimation(hero, heroImg){
         y: "-40%",
         ease: "none"
     }, 0);
+
+    gsap.fromTo(boardElement, {
+        scale: 2.75,
+        yPercent: 55
+        },
+        {
+        scale: 1,
+        yPercent: 0,
+        scrollTrigger: {
+            trigger: colElement,
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+            pin: colElement,
+            anticipatePin: 1,
+            refreshPriority: 1
+        }
+    });
 }

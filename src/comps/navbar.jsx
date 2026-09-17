@@ -24,10 +24,10 @@ function Navbar(){
         <nav ref={navRef} className="navbar">
             <h2 className="logo">{/*HERBARIUM*/}</h2>
             <div className="links navbar-links">
-                <p>collections</p>
+                <a href="#collections">collections</a>
                 {/*<p>archive</p>
                 <p>journal</p>*/}
-                <p>contact</p>
+                <a href="#contact">contact</a>
             </div>
         </nav>
     )

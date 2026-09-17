@@ -13,7 +13,7 @@ function Collections({featuredImgRef}) {
     }, []);
 
     return(
-        <section className="collections" ref={colRef}>
+        <section className="collections" ref={colRef} id="collections">
             <h2>Collections</h2>
             <p>explore our curated botanical selections</p>
             <div className="collections-board" ref={boardRef}>
